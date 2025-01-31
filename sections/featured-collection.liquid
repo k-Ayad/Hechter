@@ -86,7 +86,7 @@
       {%- endif -%}
     </div>
 
-    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" data-autoplay="true" data-interval="5000">
       <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
@@ -179,6 +179,90 @@
         </div>
       {%- endif -%}
     </slider-component>
+    
+    <style>
+      #Slider-{{ section.id }} {
+        scroll-behavior: smooth;
+        transition: scroll-left 0.5s ease-in-out;
+      }
+      .slider-counter {
+        display: none;
+      }
+    </style>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sliderEl = document.querySelector('#Slider-{{ section.id }}');
+      if (!sliderEl) return;
+    
+      const sliderComponent = sliderEl.closest('slider-component');
+      const nextButton = sliderComponent.querySelector('.slider-button--next');
+      const prevButton = sliderComponent.querySelector('.slider-button--prev');
+      const counterCurrent = sliderComponent.querySelector('.slider-counter--current');
+      const counterTotal = sliderComponent.querySelector('.slider-counter--total');
+      
+      let autoSlideInterval;
+      let isHovered = false;
+      let totalSlides = sliderEl.querySelectorAll('.grid__item').length;
+      let currentSlide = 1;
+      const slideDuration = parseInt(sliderComponent.dataset.interval) || 5000;
+    
+      function updateCounter() {
+        counterCurrent.textContent = currentSlide;
+        counterTotal.textContent = totalSlides;
+      }
+    
+      function slideNext() {
+        if (currentSlide >= totalSlides) {
+          sliderEl.scrollTo({ left: 0, behavior: 'smooth' });
+          currentSlide = 1;
+        } else {
+          nextButton.click();
+          currentSlide++;
+        }
+        updateCounter();
+      }
+    
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+          if (!isHovered) slideNext();
+        }, slideDuration);
+      }
+    
+      // Event listeners
+      sliderEl.addEventListener('mouseenter', () => {
+        isHovered = true;
+        clearInterval(autoSlideInterval);
+      });
+    
+      sliderEl.addEventListener('mouseleave', () => {
+        isHovered = false;
+        startAutoSlide();
+      });
+    
+      prevButton.addEventListener('click', () => {
+        currentSlide = currentSlide > 1 ? currentSlide - 1 : totalSlides;
+        updateCounter();
+      });
+    
+      nextButton.addEventListener('click', () => {
+        currentSlide = currentSlide < totalSlides ? currentSlide + 1 : 1;
+        updateCounter();
+      });
+    
+      // Initialize
+      updateCounter();
+      startAutoSlide();
+    
+      // Handle infinite loop
+      sliderEl.addEventListener('scrollend', () => {
+        const scrollRight = sliderEl.scrollWidth - sliderEl.clientWidth;
+        if (sliderEl.scrollLeft >= scrollRight) {
+          sliderEl.scrollTo({ left: 0, behavior: 'auto' });
+        }
+      });
+    });
+    </script>
 
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
