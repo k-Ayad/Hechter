@@ -3,7 +3,6 @@
 
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
-{{ 'swiper.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -148,7 +147,7 @@
         {%- endfor -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        {% comment %} <div class="slider-buttons">
+        <div class="slider-buttons">
           <button
             type="button"
             class="slider-button slider-button--prev"
@@ -177,14 +176,6 @@
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </button>
-        </div> {% endcomment %}
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal slider-buttons">
-          <span class="swiper-pagination-bullet" role="button" data-bullet-index="0" aria-label="Go to slide 1"></span>
-          <span class="swiper-pagination-bullet" role="button" data-bullet-index="1" aria-label="Go to slide 2"></span>
-          <span class="swiper-pagination-bullet" role="button" data-bullet-index="2" aria-label="Go to slide 3"></span>
-          <span class="swiper-pagination-bullet swiper-pagination-bullet-active" role="button" data-bullet-index="3" aria-label="Go to slide 4" tabindex="0" aria-current="true"></span>
-          <span class="swiper-pagination-bullet" role="button" data-bullet-index="4" aria-label="Go to slide 5"></span>
-          <span class="swiper-pagination-bullet" role="button" data-bullet-index="5" aria-label="Go to slide 6"></span>
         </div>
       {%- endif -%}
     </slider-component>
