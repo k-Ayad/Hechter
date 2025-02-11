@@ -1,14 +1,15 @@
 {
   "current": {
-    "logo_width": 90,
-    "type_header_font": "poppins_n6",
-    "heading_scale": 120,
-    "type_body_font": "poppins_n5",
+    "logo": "shopify:\/\/shop_images\/logo_dh.png",
+    "logo_width": 210,
+    "type_header_font": "poppins_n4",
+    "heading_scale": 100,
+    "type_body_font": "poppins_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1400,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
+    "spacing_grid_horizontal": 40,
+    "spacing_grid_vertical": 40,
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "none",
     "buttons_border_thickness": 1,
@@ -30,7 +31,7 @@
     "inputs_radius": 0,
     "inputs_shadow_opacity": 0,
     "inputs_shadow_horizontal_offset": 0,
-    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_vertical_offset": 0,
     "inputs_shadow_blur": 5,
     "card_style": "standard",
     "card_image_padding": 0,
@@ -113,7 +114,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "notification",
+    "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
@@ -133,6 +134,51 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "6933373160360723723": {
+        "type": "shopify:\/\/apps\/swishlist-simple-wishlist\/blocks\/wishlist_settings\/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+        "disabled": true,
+        "settings": {
+          "custom_css": ""
+        }
+      },
+      "10583289249535060075": {
+        "type": "shopify:\/\/apps\/basic-wishlist\/blocks\/popup\/1611f065-e251-4250-8609-2fa2f1877c57",
+        "disabled": true,
+        "settings": {
+          "icon_width": 16,
+          "icon": "regular",
+          "icon_color": "#EA3C53",
+          "counter_font_size": 11,
+          "counter_padding": 4,
+          "counter_radius": 30,
+          "counter_offset": 4,
+          "counter_color": "#ffffff",
+          "counter_bg_color": "#EA3C53",
+          "sidebar_position": "centerright",
+          "sidebar_border_width": 2,
+          "sidebar_border_radius": 140,
+          "sidebar_padding": 30,
+          "sidebar_margin": 20,
+          "sidebar_bg_color": "#ffffff",
+          "sidebar_border_color": "#EA3C53",
+          "popup_border_radius": 0,
+          "popup_border_width": 1,
+          "popup_bg_color": "#ffffff",
+          "popup_border_color": "#e7e7e7",
+          "popup_heading": "#121212",
+          "close_icon": "thin",
+          "popup_image_radius": 0,
+          "popup_link": "#121212",
+          "popup_backdrop": "#FDF2F4"
+        }
+      },
+      "10012068959737676665": {
+        "type": "shopify:\/\/apps\/gropulse-wishlist\/blocks\/gropulse-wishlist\/d606b448-832c-4b0a-adbb-21c7fa132df1",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -180,11 +226,11 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#334fb4",
+          "background": "#000e36",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#334fb4",
+          "button_label": "#000e36",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
@@ -382,5 +428,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "* {text-transform: uppercase;}"
+    ]
   }
 }
