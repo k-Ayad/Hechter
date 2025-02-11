@@ -4,12 +4,39 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "text_gTVzCF": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact",
+            "subtext": "<p><strong>Write us an e-mail or call us. We will be glad to help you.<\/strong><\/p><p>+20 11 111 222 44<\/p><p>SUN - TUE from 9:30 AM to 6:00 PM<\/p><p><a href=\"mailto:help.dh@cc-egypt.com\">help.dh@cc-egypt.com<\/a><\/p>"
+          }
+        },
+        "link_list_nf3ctX": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Company",
+            "menu": "main-menu"
+          }
+        },
+        "brand_information_xwyeTz": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "text_gTVzCF",
+        "link_list_nf3ctX",
+        "brand_information_xwyeTz"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
