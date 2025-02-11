@@ -32,6 +32,9 @@
         "announcement_MQjgF7",
         "announcement_CktCAD"
       ],
+      "custom_css": [
+        ".announcement-bar__message {margin-bottom: 0; font-weight: 600; line-height:1.5; letter-spacing: 1;}"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "show_line_separator": true,
