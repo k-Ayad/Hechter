@@ -45,6 +45,10 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "gropulse_wishlist_gropulse_wishlist_button_7cQFH6": {
+          "type": "shopify:\/\/apps\/gropulse-wishlist\/blocks\/gropulse-wishlist-button\/d606b448-832c-4b0a-adbb-21c7fa132df1",
+          "settings": {}
         }
       },
       "block_order": [
@@ -55,7 +59,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "gropulse_wishlist_gropulse_wishlist_button_7cQFH6"
       ],
       "settings": {
         "enable_sticky_info": true,

@@ -87,6 +87,10 @@
                   </a>
                 {%- endif -%}
               </div>
+              {%- when 'custom_liquid' -%}
+                <div class="rich-text__custom-liquid">
+                  {{ block.settings.custom_liquid_code }}
+                </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>
@@ -220,6 +224,17 @@
           ],
           "default": "h1",
           "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "Custom Liquid",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid_code",
+          "label": "Custom Liquid Code"
         }
       ]
     },

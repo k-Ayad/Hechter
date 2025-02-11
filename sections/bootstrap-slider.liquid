@@ -1,0 +1,251 @@
+
+
+
+
+<style>
+    .carousel-control-prev-icon{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+    }
+    .carousel-control-next-icon{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    }
+    .carousel-control-next-icon, .carousel-control-prev-icon{
+        width: 3rem;
+        height: 3rem;
+    }
+    .carousel-control-prev-icon, .carousel-control-prev-icon{
+        width: 3rem;
+        height: 3rem;
+    }
+    .desktop{
+        display: block !important;
+    }
+    .mobile{
+        display: none !important;
+    }
+
+    @media screen and (max-width:769px) {
+        .desktop{
+            display: none !important;
+        }
+        .mobile{
+            display: block !important;
+        }
+    }
+    .carousel-indicators [data-bs-target]{
+        background-color: #fff;
+    }
+
+    /* Custom height when selected */
+        .custom-height .carousel-inner {
+            height: {{ section.settings.desktop_height }}px;
+        }
+
+        @media screen and (max-width: 769px) {
+            .custom-height .carousel-inner {
+                height: {{ section.settings.mobile_height }}px;
+            }
+        }
+
+        /* Adaptive height behavior */
+        .adapt-height .carousel-inner {
+            display: flex;
+            align-items: center;
+        }
+
+        .adapt-height .carousel-item img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+</style>
+
+
+<div id="carouselIndicatorsDesktop-{{section.id}}" class="carousel slide desktop 
+{% if section.settings.slider_height_mode == 'auto' %} adapt-height {% else %} custom-height {% endif %}"  data-bs-ride="carousel">
+    {% if section.settings.showIndecators %}
+        <div class="carousel-indicators">
+          {% for block in section.blocks %}
+              <button type="button" data-bs-target="#carouselIndicatorsDesktop-{{section.id}}" 
+              data-bs-slide-to="{{forloop.index0}}" 
+              {% if forloop.first %}
+                   class="active"
+                   aria-current="true" 
+              {% endif %} 
+              aria-label="Slide {{forloop.index}}">
+              </button>
+          {% endfor %}
+        </div>
+    {% endif %}
+  <div class="carousel-inner">
+    {% for block in section.blocks %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %} "  data-bs-interval="{{section.settings.autoplay_time}}">
+          {% if block.settings.image_url %}
+            <a href="{{block.settings.image_url}}">
+          {% endif %}
+          <img src="{{block.settings.desktop_image |  image_url }}" class="d-block w-100" alt="...">
+          {% if block.settings.image_url %}
+            </a>
+        {% endif %}
+        </div>
+    {% endfor %}
+  </div>
+  {% if section.blocks.size > 1 and section.settings.switchBtns == true %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicatorsDesktop-{{section.id}}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicatorsDesktop-{{section.id}}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  {% endif %}
+</div>
+
+<div id="carouselIndicatorsMobile-{{section.id}}" class="carousel slide mobile
+{% if section.settings.slider_height_mode == 'auto' %} adapt-height {% else %} custom-height {% endif %}" data-bs-ride="carousel">
+    {% if section.settings.showIndecators %}
+        <div class="carousel-indicators">
+          {% for block in section.blocks %}
+              <button type="button" data-bs-target="#carouselIndicatorsMobile-{{section.id}}" 
+              data-bs-slide-to="{{forloop.index0}}" 
+              {% if forloop.first %}
+                   class="active" 
+                   aria-current="true" 
+              {% endif %} 
+              aria-label="Slide {{forloop.index}}">
+              </button>
+          {% endfor %}
+        </div>
+    {% endif %}
+  <div class="carousel-inner">
+    {% for block in section.blocks %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %} "  data-bs-interval="{{section.settings.autoplay_time}}">
+          {% if block.settings.image_url %}
+            <a href="{{block.settings.image_url}}">
+          {% endif %}
+          <img src="{{block.settings.mobile_image |  image_url }}" class="d-block w-100" alt="...">
+          {% if block.settings.image_url %}
+            </a>
+        {% endif %}
+        </div>
+    {% endfor %}
+  </div>
+  {% if section.blocks.size > 1 and section.settings.switchBtns == true %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicatorsMobile-{{section.id}}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicatorsMobile-{{section.id}}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  {% endif %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function updateSliderHeight() {
+        document.querySelectorAll('.adapt-height').forEach(carousel => {
+            let firstImage = carousel.querySelector('.carousel-item.active img');
+            if (firstImage) {
+                let imgHeight = firstImage.clientHeight;
+                carousel.querySelector('.carousel-inner').style.height = imgHeight + "px";
+            }
+        });
+    }
+
+    // Set height on page load
+    updateSliderHeight();
+
+    // Update height when the slide changes
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        carousel.addEventListener('slid.bs.carousel', updateSliderHeight);
+    });
+
+    // Adjust height on window resize
+    window.addEventListener("resize", updateSliderHeight);
+});
+</script>
+
+{% schema %}
+{
+    "name": "Bootstrap Slider",
+    "settings": [
+            {
+                "type":"number",
+                "id": "autoplay_time",
+                "label": "Autoplay Duration 'ms' " ,
+                "default":3000
+            },
+            {
+                "type": "checkbox",
+                "id": "switchBtns",
+                "label": "Show Switch Buttons",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "showIndecators",
+                "label": "Show Sliding Indecators",
+                "default": true
+            },
+            {
+                "type": "select",
+                "id": "slider_height_mode",
+                "label": "Slider Height Mode",
+                "options": [
+                    {
+                        "value": "auto",
+                        "label": "Adapt to First Image"
+                    },
+                    {
+                        "value": "custom",
+                        "label": "Custom Height"
+                    }
+                ],
+                "default": "auto"
+            },
+            {
+                "type": "number",
+                "id": "desktop_height",
+                "label": "Custom Height for Desktop (px)",
+                "default": 500
+            },
+            {
+                "type": "number",
+                "id": "mobile_height",
+                "label": "Custom Height for Mobile (px)",
+                "default": 300
+            }
+
+        ],
+        "blocks": [{
+            "type": "image",
+            "name":"image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "desktop_image",
+                    "label": "desktop Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image",
+                    "label": "Mobile Image"
+                },
+                {
+                  "type": "url",
+                  "id": "image_url",
+                  "label": "Image URL"
+                }
+            ]
+        }],
+        "presets": [{
+            "name": "Bootstrap Slider"
+            
+        }]
+}
+{% endschema %}
