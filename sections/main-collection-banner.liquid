@@ -18,7 +18,7 @@
       </h1>
 
       {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
+        <div class="collection-hero__description rte {% if section.settings.center_text %} text-center {% endif %}">{{ collection.description }}</div>
       {%- endif -%}
     </div>
 
@@ -59,6 +59,12 @@
       "id": "show_collection_description",
       "default": true,
       "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_text",
+      "default": true,
+      "label": "center text"
     },
     {
       "type": "checkbox",
