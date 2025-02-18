@@ -570,7 +570,8 @@
             >
               {{- 'products.product.sold_out' | t -}}
             </span> {% endcomment %}
-            <span class="ast-shop-product-out-of-stock">Out of stock</span>
+            {% comment %} <span class="ast-shop-product-out-of-stock">Out of stock</span> {% endcomment %}
+             <span>sold out</span>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
