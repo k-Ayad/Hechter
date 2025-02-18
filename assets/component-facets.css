@@ -912,7 +912,7 @@ details.menu-opening .mobile-facets__close .svg-wrapper {
 }
 
 .mobile-facets__close-button > .facets__and-helptext {
-  grid-column-start: 2;
+  grid-column-start: 3;
 }
 
 .mobile-facets__close-button .icon-arrow {
