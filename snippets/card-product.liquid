@@ -140,12 +140,13 @@
           </div>
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
-              <span
+              {% comment %} <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
               >
                 {{- 'products.product.sold_out' | t -}}
-              </span>
+              </span> {% endcomment %}
+            <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="ast-shop-product-out-of-stock">Out of stock</span>
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
@@ -564,14 +565,12 @@
         {% endif %}
         <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
-            {% comment %} <span
+            <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
             >
               {{- 'products.product.sold_out' | t -}}
-            </span> {% endcomment %}
-            {% comment %} <span class="ast-shop-product-out-of-stock">Out of stock</span> {% endcomment %}
-             <span>sold out</span>
+            </span>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
