@@ -27,6 +27,20 @@
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+  {% style %}
+    .ast-shop-product-out-of-stock {
+      bottom: 1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      position: absolute;
+      background-color: rgba(255, 255, 255, .88);
+      transition: background .3s;
+      text-align: center;
+      left: 1em;
+      right: 1em;
+      padding: .5em 0 .7em;
+    }
+  {% endstyle %}
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -550,12 +564,13 @@
         {% endif %}
         <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
-            <span
+            {% comment %} <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
             >
               {{- 'products.product.sold_out' | t -}}
-            </span>
+            </span> {% endcomment %}
+            <span class="ast-shop-product-out-of-stock">Out of stock</span>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
