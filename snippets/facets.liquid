@@ -583,7 +583,7 @@
 
                   {% case filter.type %}
                     {% when 'boolean', 'list' %}
-                      {% comment %} <div class="wpf_item wpf_item_wpf_cat">
+                      <div class="wpf_item wpf_item_wpf_cat">
                         <div class="wpf_item_name wpf_grouped_label">Filter by category</div>
                         <div class="wpf_items_group" style="">
                           <ul class="wpf_hierachy">
@@ -651,7 +651,7 @@
                           </ul>
                           <div class="wpf_reset_btn"><input type="reset" value="Clear"></div>
                         </div>
-                      </div> {% endcomment %}
+                      </div>
                       <details
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
