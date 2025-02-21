@@ -583,7 +583,7 @@
 
                   {% case filter.type %}
                     {% when 'boolean', 'list' %}
-                      <div class="wpf_item wpf_item_wpf_cat">
+                      {% comment %} <div class="wpf_item wpf_item_wpf_cat">
                         <div class="wpf_item_name wpf_grouped_label">Filter by category</div>
                         <div class="wpf_items_group" style="">
                           <ul class="wpf_hierachy">
@@ -611,47 +611,11 @@
                               <span class="wpf_item_count">1</span>
                             </li>
 
-                            <li class="wpf_product_cat_372">
-                              <input
-                                id="wpf_filter_372"
-                                type="checkbox"
-                                name="wpf_filter-by-category[]"
-                                value="bermuda-falt-pkt"
-                              >
-                              <label for="wpf_filter_372"> BERMUDA/FALT PKT </label>
 
-                              <span class="wpf_item_count">1</span>
-                            </li>
-
-                            <li class="wpf_product_cat_337">
-                              <input id="wpf_filter_337" type="checkbox" name="wpf_filter-by-category[]" value="chino">
-                              <label for="wpf_filter_337"> CHINO </label>
-
-                              <span class="wpf_item_count">8</span>
-                            </li>
-
-                            <li class="wpf_product_cat_366">
-                              <input id="wpf_filter_366" type="checkbox" name="wpf_filter-by-category[]" value="shorts">
-                              <label for="wpf_filter_366"> SHORTS </label>
-
-                              <span class="wpf_item_count">1</span>
-                            </li>
-
-                            <li class="wpf_product_cat_354">
-                              <input
-                                id="wpf_filter_354"
-                                type="checkbox"
-                                name="wpf_filter-by-category[]"
-                                value="swim-shorts"
-                              >
-                              <label for="wpf_filter_354"> SWIM SHORTS </label>
-
-                              <span class="wpf_item_count">2</span>
-                            </li>
                           </ul>
                           <div class="wpf_reset_btn"><input type="reset" value="Clear"></div>
                         </div>
-                      </div>
+                      </div> {% endcomment %}
                       <details
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
