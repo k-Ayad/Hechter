@@ -40,6 +40,9 @@
     text-align: center;
     transition: all .3s;
   }
+  .mobile-facets__close > .svg-wrapper {
+    height:auto;
+  }
 {%- endstyle -%}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
