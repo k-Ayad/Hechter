@@ -68,6 +68,20 @@
   .wpf_form * {
       box-sizing: border-box;
   }
+  .wpf_items_grouped .wpf_grouped_label:after {
+    content: "\e801";
+    cursor: pointer;
+    font-family: themify_wc_product_filter_icons;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    top: 16%;
+  }
+  .tf_clearfix:after, .wpf_form:after, .wpf_item ul:after, .wpf_item:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 {%- endstyle -%}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
