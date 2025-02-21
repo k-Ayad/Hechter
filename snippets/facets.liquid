@@ -50,6 +50,24 @@
     padding: 15px;
     border-radius: 4px;
   }
+  .wpf_item .wpf_item_name{
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    cursor: auto;
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 0 .8em;
+    padding-bottom: .8em;
+    position: relative;
+    width: 100%;
+  }
+  .wpf_form .wpf_items_wrapper .wpf_item ul {
+    margin: 0;
+    padding: 0;
+  }
+  .wpf_form * {
+      box-sizing: border-box;
+  }
 {%- endstyle -%}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
