@@ -27,6 +27,62 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
 -%}
+{%- style -%}
+  .mobile-facets__close {
+    color: #000e36;
+    border-radius: 50% 50% 50% 50%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 4px 7px 5px 7px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .mobile-facets__close > .svg-wrapper {
+    height: auto;
+  }
+  .wpf_item{
+    position: relative;
+    border: 2px solid #F0F0F0 !important;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  .wpf_item .wpf_item_name{
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    cursor: auto;
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 0 .8em;
+    padding-bottom: .8em;
+    position: relative;
+    width: 100%;
+  }
+  .wpf_form .wpf_items_wrapper .wpf_item ul {
+    margin: 0;
+    padding: 0;
+  }
+  .wpf_form * {
+      box-sizing: border-box;
+  }
+  .wpf_items_grouped .wpf_grouped_label:after {
+    content: "\e801";
+    cursor: pointer;
+    font-family: themify_wc_product_filter_icons;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    top: 16%;
+  }
+  .tf_clearfix:after, .wpf_form:after, .wpf_item ul:after, .wpf_item:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+{%- endstyle -%}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
@@ -447,7 +503,14 @@
       <summary class="mobile-facets__open-wrapper focus-offset">
         <span class="mobile-facets__open{% if filter_type == 'drawer' and enable_filtering == false %} medium-hide large-up-hide{% endif %}">
           <span class="svg-wrapper">
-            {{- 'icon-filter.svg' | inline_asset_content -}}
+            <svg
+              aria-hidden="true"
+              class="e-font-icon-svg e-fas-filter"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path>
+            </svg>
           </span>
           <span class="mobile-facets__open-label button-label medium-hide large-up-hide">
             {%- if enable_filtering and enable_sorting -%}
@@ -466,7 +529,7 @@
         </span>
         <span tabindex="0" class="mobile-facets__close">
           <span class="svg-wrapper">
-            {{- 'icon-close.svg' | inline_asset_content -}}
+            {{- 'icon-close-hechter.svg' | inline_asset_content -}}
           </span>
         </span>
       </summary>
@@ -520,6 +583,39 @@
 
                   {% case filter.type %}
                     {% when 'boolean', 'list' %}
+                      {% comment %} <div class="wpf_item wpf_item_wpf_cat">
+                        <div class="wpf_item_name wpf_grouped_label">Filter by category</div>
+                        <div class="wpf_items_group" style="">
+                          <ul class="wpf_hierachy">
+                            <li class="wpf_product_cat_370">
+                              <input
+                                id="wpf_filter_370"
+                                type="checkbox"
+                                name="wpf_filter-by-category[]"
+                                value="5-pockets"
+                              >
+                              <label for="wpf_filter_370"> 5 POCKETS </label>
+
+                              <span class="wpf_item_count">3</span>
+                            </li>
+
+                            <li class="wpf_product_cat_371">
+                              <input
+                                id="wpf_filter_371"
+                                type="checkbox"
+                                name="wpf_filter-by-category[]"
+                                value="bermuda-cargo"
+                              >
+                              <label for="wpf_filter_371"> BERMUDA/CARGO </label>
+
+                              <span class="wpf_item_count">1</span>
+                            </li>
+
+
+                          </ul>
+                          <div class="wpf_reset_btn"><input type="reset" value="Clear"></div>
+                        </div>
+                      </div> {% endcomment %}
                       <details
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
