@@ -1,6 +1,15 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/logo_dh.png",
+    "logo": "shopify://shop_images/logo_dh.png",
     "logo_width": 210,
     "type_header_font": "poppins_n4",
     "heading_scale": 100,
@@ -98,12 +107,12 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "FOLLOW US",
-    "brand_description": "<p><\/p>",
-    "brand_image": "shopify:\/\/shop_images\/Screenshot_2025-02-11_195951.png",
+    "brand_description": "<p></p>",
+    "brand_image": "shopify://shop_images/Screenshot_2025-02-11_195951.png",
     "brand_image_width": 550,
-    "social_facebook_link": "https:\/\/facebook.com",
-    "social_instagram_link": "http:\/\/instagram.com",
-    "social_youtube_link": "https:\/\/youtube",
+    "social_facebook_link": "https://facebook.com",
+    "social_instagram_link": "http://instagram.com",
+    "social_youtube_link": "https://youtube",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
@@ -136,19 +145,19 @@
     "content_for_index": [],
     "blocks": {
       "6933373160360723723": {
-        "type": "shopify:\/\/apps\/swishlist-simple-wishlist\/blocks\/wishlist_settings\/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+        "type": "shopify://apps/swishlist-simple-wishlist/blocks/wishlist_settings/bfcb80f2-f00d-42ae-909a-9f00c726327b",
         "disabled": true,
         "settings": {
           "custom_css": ""
         }
       },
       "10012068959737676665": {
-        "type": "shopify:\/\/apps\/gropulse-wishlist\/blocks\/gropulse-wishlist\/d606b448-832c-4b0a-adbb-21c7fa132df1",
+        "type": "shopify://apps/gropulse-wishlist/blocks/gropulse-wishlist/d606b448-832c-4b0a-adbb-21c7fa132df1",
         "disabled": true,
         "settings": {}
       },
       "10583289249535060075": {
-        "type": "shopify:\/\/apps\/basic-wishlist\/blocks\/popup\/1611f065-e251-4250-8609-2fa2f1877c57",
+        "type": "shopify://apps/basic-wishlist/blocks/popup/1611f065-e251-4250-8609-2fa2f1877c57",
         "disabled": true,
         "settings": {
           "icon_width": 16,
@@ -393,7 +402,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
