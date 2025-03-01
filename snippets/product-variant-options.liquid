@@ -63,6 +63,17 @@
       <span class="visually-hidden">{{ value | escape }}</span>
       {{ label_unavailable }}
     {%- endcapture -%}
+
+    {% assign background_color = 'white' %}
+  {% for meta in product.metafields.custom.meta_color.value %} 
+    {% assign color_name = meta.color_name | downcase %}
+    {% assign value_name = value |  downcase %}
+    
+    {% if color_name ==  value_name %}
+      {% assign background_color = meta.color %}
+    {% endif %}
+
+  {% endfor %}
     {%
       render 'swatch-input',
       id: input_id,
@@ -74,7 +85,8 @@
       visually_disabled: option_disabled,
       shape: block.settings.swatch_shape,
       help_text: help_text,
-      additional_props: input_dataset
+      additional_props: input_dataset,
+      background_color : background_color
     %}
   {%- elsif picker_type == 'button' -%}
     <input

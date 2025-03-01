@@ -865,6 +865,25 @@ summary::-webkit-details-marker {
   color: rgba(var(--color-foreground), 0.7);
 }
 
+.product__info-container .subtitle{
+  font-family: "Poppins", Sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.3em;
+  color: #000E36;
+  text-transform: none ;
+}
+
+@media screen and (max-width:769px) {
+  .product__info-container .subtitle{
+    font-size: 1.3rem;
+  }
+
+  .product__title  {
+      margin-top: 20px;
+  }
+}
+
 .subtitle--small {
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
@@ -1877,10 +1896,10 @@ input[type='checkbox'] {
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  width: calc(12rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   display: flex;
   border-radius: var(--inputs-radius);
-  min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+  min-height: calc((var(--inputs-border-width) * 2) + 3.5rem);
 }
 
 .quantity:after {

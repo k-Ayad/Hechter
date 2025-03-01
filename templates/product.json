@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -18,10 +11,23 @@
           "type": "price",
           "settings": {}
         },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "All prices incl. VAT,per order plus packaging & insurance",
+            "text_style": "subtitle"
+          }
+        },
+        "sku_PT6KK6": {
+          "type": "sku",
+          "settings": {
+            "text_style": "subtitle"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "swatch",
             "swatch_shape": "circle"
           }
         },
@@ -52,9 +58,10 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
+        "vendor",
+        "sku_PT6KK6",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -63,16 +70,16 @@
         "gropulse_wishlist_gropulse_wishlist_button_7cQFH6"
       ],
       "settings": {
-        "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
-        "media_size": "large",
-        "constrain_to_viewport": true,
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-8589671a-2be6-46b4-be0e-870a3a49517e",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "image_zoom": "hover",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
