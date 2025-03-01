@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_PP4UwW": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/02_Teaser-6.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_with_text_yeEg6j": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pEqtNp": {
+          "type": "heading",
+          "settings": {
+            "heading": "MANIFESTO",
+            "heading_size": "h0"
+          }
+        },
+        "text_gpPymP": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>We are always on the move.<\/strong><br\/>Always on the up.<\/h3><h3>Sporty, yet chic.<br\/><strong>We are French allure:<\/strong>effortless elegance.<\/h3><h3><strong>We are French flair.<\/strong><br\/>We live to be, to be with ease and freedom.<\/h3><h3>Join our life.<br\/>We give you the power to be yourself.<\/h3><h3>French it until you make it.<\/h3><h3><strong>We are HECHTER PARIS.<\/strong><\/h3>",
+            "text_style": "body"
+          }
+        },
+        "button_dYcKkX": {
+          "type": "button",
+          "settings": {
+            "button_label": "BACK TO THE SHOP",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_pEqtNp",
+        "text_gpPymP",
+        "button_dYcKkX"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/06_Teaser-3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_PP4UwW",
+    "image_with_text_yeEg6j"
+  ]
+}
