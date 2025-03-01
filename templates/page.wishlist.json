@@ -38,7 +38,7 @@
     }
   },
   "order": [
-    "product-grid",
-    "main"
+    "main",
+    "product-grid"
   ]
 }
