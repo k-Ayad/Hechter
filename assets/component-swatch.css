@@ -18,8 +18,8 @@
 .swatch--square {
   --swatch--border-radius: var(--swatch-input--border-radius, 0.2rem);
 }
-
+/* 
 .swatch--unavailable {
   border-style: dashed;
   border-color: rgba(var(--color-foreground), 0.5);
-}
+} */
