@@ -175,7 +175,7 @@
       },
       "10012068959737676665": {
         "type": "shopify:\/\/apps\/gropulse-wishlist\/blocks\/gropulse-wishlist\/d606b448-832c-4b0a-adbb-21c7fa132df1",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
@@ -232,6 +232,17 @@
           "button": "#ffffff",
           "button_label": "#000e36",
           "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-8589671a-2be6-46b4-be0e-870a3a49517e": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#000e36",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       }
