@@ -32,6 +32,10 @@
 -%}
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
+  <div style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:1;">
+    {% comment %} <i class="fas fa-bookmark" aria-hidden="true"></i> {% endcomment %}
+    <i class="bi bi-bookmark"></i>
+  </div>
   <div
     class="
       card
@@ -120,10 +124,6 @@
     </div>
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
-        <div style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:1;">
-          {% comment %} <i class="fas fa-bookmark" aria-hidden="true"></i> {% endcomment %}
-          <i class="bi bi-bookmark"></i>
-        </div>
         <div class="card__information">
           <h3 class="card__heading">
             <a
