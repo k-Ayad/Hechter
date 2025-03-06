@@ -121,7 +121,8 @@
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
         <div style="position:absolute; top: 0; left: 3px;">
-          <i class="fas fa-bookmark" aria-hidden="true"></i>
+          {% comment %} <i class="fas fa-bookmark" aria-hidden="true"></i> {% endcomment %}
+          <i class="bi bi-bookmark"></i>
         </div>
         <div class="card__information">
           <h3 class="card__heading">
