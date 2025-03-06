@@ -47,15 +47,9 @@
       class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
-    <div data-item_id="6703" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop remove" style="inset: 17px auto auto 17px; display: block;">
-      <div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+    <div style="position:absolute; top: 0; left: 3px;">
         <i class="fas fa-bookmark" aria-hidden="true"></i>
-      </div>
-      <div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
-        <i class="fas fa-bookmark" aria-hidden="true"></i>
-      </div>
-          <i class="loading fas fa-sync-alt fa-spin fa-fw"></i>
-      </div>
+    </div>
     <a
                 {% if card_collection == blank %}
                   role="link" aria-disabled="true"
