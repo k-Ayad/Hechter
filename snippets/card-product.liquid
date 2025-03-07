@@ -93,7 +93,7 @@
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
-      <i onclick="addToWishList({{ card_product.id }})" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
+      <i onclick="addToWishList({{ card_product | json }})" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
     </div>
     <div
       class="
