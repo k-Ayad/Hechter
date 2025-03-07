@@ -93,7 +93,7 @@
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
-      <i onclick="addToWishList({{ card_product | json }})" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
+      <i onclick="addToWishList(this)" data-product="{{ card_product | json }}" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
     </div>
     <div
       class="
@@ -679,7 +679,8 @@
   </div>
 {%- endif -%}
 <script>
-  function addToWishList(product) {
+  function addToWishList(element) {
+    const product = JSON.parse(element.getAttribute('data-product'));
     console.log(product);
     {% comment %} const productList = JSON.parse(localStorage.getItem('wishList')) || [];
     const existingProduct = productList?.find(el => el == product);
