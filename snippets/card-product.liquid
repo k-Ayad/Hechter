@@ -74,6 +74,7 @@
 
     #bookmark-wrapper:hover .fa-bookmark {
         transform: scale(1.45);
+        transition: all 0.14s ease-in-out;
     }
   {% endstyle %}
 {%- endunless -%}
@@ -90,7 +91,7 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:1;">
+    <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
       <i class="fas fa-bookmark fs-1" aria-hidden="true"></i>
     </div>
     <div
