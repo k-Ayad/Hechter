@@ -72,9 +72,9 @@
 
     const renderWishlist = (products) => {
     const wishlistContainer = document.getElementById('wishlist-container');
-    wishlistContainer.innerHTML = ''; // Clear any previous content
+    wishlistContainer.innerHTML = '<div>hello</div>'; // Clear any previous content
 
-    products.forEach(product => {
+    {% comment %} products.forEach(product => {
         const productElement = document.createElement('div');
         productElement.classList.add('product-card');
         productElement.innerHTML = `
@@ -88,7 +88,7 @@
         </div>
         `;
         wishlistContainer.appendChild(productElement);
-    });
+    }); {% endcomment %}
     };
 
     // Fetch and render the wishlist products
