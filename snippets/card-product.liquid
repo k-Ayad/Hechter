@@ -93,7 +93,7 @@
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
-      <i onclick="addToWishList({{ card_product | json }})" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
+      <i onclick="addToWishList({{ card_product.id }})" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
     </div>
     <div
       class="
@@ -681,13 +681,14 @@
 <script>
   function addToWishList(product) {
     console.log(product);
-    {% comment %} const productList = JSON.parse(localStorage.getItem('wishList')) || [];
+    const productList = JSON.parse(localStorage.getItem('wishList')) || [];
     const existingProduct = productList?.find(el => el == product);
     if(existingProduct){
-    productList = productList.filter(el => el == product);
+    const updatedProductList = productList.filter(el => el == product);
+    localStorage.setItem('wishList',JSON.stringify(productList));
     }else{
     productList.push(product);
+    localStorage.setItem('wishList',JSON.stringify(productList));
     }
-    localStorage.setItem('wishList',JSON.stringify(productList)); {% endcomment %}
   }
 </script>
