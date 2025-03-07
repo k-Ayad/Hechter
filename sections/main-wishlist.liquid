@@ -28,7 +28,7 @@
     const productIds = productList.map(product => product.id); // Get all product IDs
 
     const fetchProductDetails = async (productIds) => {
-    const query = `
+    {% comment %} const query = `
         {
         products(first: 10, query: "id:(${productIds.join(',')})") {
             edges {
@@ -66,7 +66,7 @@
     });
 
     const result = await response.json();
-    const products = result.data.products.edges.map(edge => edge.node);
+    const products = result.data.products.edges.map(edge => edge.node); {% endcomment %}
     renderWishlist(products);
     };
 
