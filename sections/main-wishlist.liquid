@@ -31,6 +31,7 @@
 </div>
 <script>
     const productList = JSON.parse(localStorage.getItem('wishList')) || [];
+    console.log(productList);
     const wishList = document.getElementById('wishlist-container');
     wishList.innerHTML = '';
     productList.forEach(product => {
@@ -99,6 +100,7 @@
           </div>
         </div>`;
     });
+
     function removeFromWishList(id, title, imageUrl, price, url) {
         const product = {id, title, imageUrl, price, url};
         const productList = JSON.parse(localStorage.getItem('wishList')) || [];
