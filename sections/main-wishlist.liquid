@@ -115,7 +115,7 @@
         if(existingProduct){
             const updatedProductList = productList.filter(el => el.id != id);
             localStorage.setItem('wishList',JSON.stringify(updatedProductList));
-            showToast('Removed successfully!');
+            showToast('Product removed from your wishlist!');
             renderProducts();
         }
     }
