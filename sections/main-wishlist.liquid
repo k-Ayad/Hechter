@@ -37,72 +37,76 @@
     function renderProducts(){
         productList = JSON.parse(localStorage.getItem('wishList')) || [];
         wishList.innerHTML = '';
-        productList.forEach(product => {
-            wishList.innerHTML += `<div class="card-wrapper col-12 col-md-3 product-card-wrapper underline-links-hover">
-              <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
-                <i
-                  onclick="removeFromWishList(${product.id})"
-                  class="fas fa-trash-can fs-3"
-                  style="cursor:pointer"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <div class="card border-0 card--standard card--media" style="--ratio-percent: 133.33333333333334%;">
-                <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 133.33333333333334%;">
-                  <div class="card__media">
-                    <div class="media media--transparent media--hover-effect">
-                      <img
-                        src="${product.imageUrl}"
-                        sizes="(min-width: 1400px) 317px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                        alt="${product.title}"
-                        class="motion-reduce"
-                        width="1500"
-                        height="2000"
-                      >
-                    </div>
+        if(productList.length){
+            productList.forEach(product => {
+                wishList.innerHTML += `<div class="card-wrapper col-12 col-md-3 product-card-wrapper underline-links-hover">
+                  <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
+                    <i
+                      onclick="removeFromWishList(${product.id})"
+                      class="fas fa-trash-can fs-3"
+                      style="cursor:pointer"
+                      aria-hidden="true"
+                    ></i>
                   </div>
-                  <div class="card__content">
-                    <div class="card__information">
-                      <h3 class="card__heading">
-                        <a
-                          href="${product.url}"
-                          id="StandardCardNoMediaLink-template--23991343350064__product-grid-9729165820208"
-                          class="full-unstyled-link"
-                          aria-labelledby="StandardCardNoMediaLink-template--23991343350064__product-grid-9729165820208 NoMediaStandardBadge-template--23991343350064__product-grid-9729165820208"
-                        >
-                          ${product.title}
-                        </a>
-                      </h3>
+                  <div class="card border-0 card--standard card--media" style="--ratio-percent: 133.33333333333334%;">
+                    <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 133.33333333333334%;">
+                      <div class="card__media">
+                        <div class="media media--transparent media--hover-effect">
+                          <img
+                            src="${product.imageUrl}"
+                            sizes="(min-width: 1400px) 317px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                            alt="${product.title}"
+                            class="motion-reduce"
+                            width="1500"
+                            height="2000"
+                          >
+                        </div>
+                      </div>
+                      <div class="card__content">
+                        <div class="card__information">
+                          <h3 class="card__heading">
+                            <a
+                              href="${product.url}"
+                              id="StandardCardNoMediaLink-template--23991343350064__product-grid-9729165820208"
+                              class="full-unstyled-link"
+                              aria-labelledby="StandardCardNoMediaLink-template--23991343350064__product-grid-9729165820208 NoMediaStandardBadge-template--23991343350064__product-grid-9729165820208"
+                            >
+                              ${product.title}
+                            </a>
+                          </h3>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="card__content">
-                  <div class="card__information">
-                    <h3 class="card__heading h5" id="title-template--23991343350064__product-grid-9729165820208">
-                      <a
-                        href="${product.url}"
-                        id="CardLink-template--23991343350064__product-grid-9729165820208"
-                        class="full-unstyled-link"
-                        aria-labelledby="CardLink-template--23991343350064__product-grid-9729165820208 Badge-template--23991343350064__product-grid-9729165820208"
-                      >
-                        ${product.title}
-                      </a>
-                    </h3>
-                    <div class="card-information">
-                      <span class="caption-large light"></span>
-                      <div class="price  price--sold-out price--on-sale">
-                        <div class="price__container">
-                          <div class="price__sale">
-                            <span class="price-item price-item--sale price-item--last"> ${product.price} </span>
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading h5" id="title-template--23991343350064__product-grid-9729165820208">
+                          <a
+                            href="${product.url}"
+                            id="CardLink-template--23991343350064__product-grid-9729165820208"
+                            class="full-unstyled-link"
+                            aria-labelledby="CardLink-template--23991343350064__product-grid-9729165820208 Badge-template--23991343350064__product-grid-9729165820208"
+                          >
+                            ${product.title}
+                          </a>
+                        </h3>
+                        <div class="card-information">
+                          <span class="caption-large light"></span>
+                          <div class="price  price--sold-out price--on-sale">
+                            <div class="price__container">
+                              <div class="price__sale">
+                                <span class="price-item price-item--sale price-item--last"> ${product.price} </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>`;
-        });
+                </div>`;
+            });
+        }else{
+            wishList.innerHTML = '<div style="display:block">The Wishlist is empty.</div>';
+        }
     };
 
     function removeFromWishList(id) {
