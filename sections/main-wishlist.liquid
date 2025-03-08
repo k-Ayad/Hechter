@@ -40,10 +40,10 @@
           toast.classList.add('show');
         }, 100);
     
-        setTimeout(function() {
+        {% comment %} setTimeout(function() {
           toast.classList.remove('show');
           document.body.removeChild(toast);
-        }, 4000);
+        }, 4000); {% endcomment %}
       }
     let productList;
     const wishList = document.getElementById('wishlist-container');
