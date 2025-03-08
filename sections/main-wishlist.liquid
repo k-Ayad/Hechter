@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  <h1 class="main-page-title page-title h0">
     {{ page.title | escape }}
   </h1>
   <div id="wishlist-container row">
@@ -24,7 +24,12 @@
         id="bookmark-wrapper"
         style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;"
       >
-          <i onclick="addToWishList('9729165820208','Allergic to People T-Shirt', '//hechterpariseg.com/cdn/shop/files/20241219-029-2_medium.jpg?v=1738336365', 'LE 299.00', '/products/allergic-to-people-t-shirt-ormw24ts-019ess')" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
+        <i
+          onclick="addToWishList('9729165820208','Allergic to People T-Shirt', '//hechterpariseg.com/cdn/shop/files/20241219-029-2_medium.jpg?v=1738336365', 'LE 299.00', '/products/allergic-to-people-t-shirt-ormw24ts-019ess')"
+          class="fas fa-bookmark fs-1"
+          style="cursor:pointer"
+          aria-hidden="true"
+        ></i>
       </div>
       <div class="card border-0 card--standard card--media" style="--ratio-percent: 133.33333333333334%;">
         <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 133.33333333333334%;">
@@ -69,30 +74,9 @@
             </h3>
             <div class="card-information">
               <span class="caption-large light"></span>
-              <div
-                class="          price  price--sold-out price--on-sale"
-              >
-                <div class="price__container">
-                  <div class="price__regular">
-                    <span class="visually-hidden visually-hidden--inline">Regular price</span>
-                    <span class="price-item price-item--regular"> LE 299.00 EGP </span>
-                  </div>
-                  <div class="price__sale">
-                    <span class="visually-hidden visually-hidden--inline">Regular price</span>
-                    <span>
-                      <s class="price-item price-item--regular"> LE 459.00 EGP </s> </span
-                    ><span class="visually-hidden visually-hidden--inline">Sale price</span>
-                    <span class="price-item price-item--sale price-item--last"> LE 299.00 EGP </span>
-                  </div>
-                  <small class="unit-price caption hidden">
-                    <span class="visually-hidden">Unit price</span>
-                    <span class="price-item price-item--last">
-                      <span></span>
-                      <span aria-hidden="true">/</span>
-                      <span class="visually-hidden">&nbsp;per&nbsp;</span>
-                      <span> </span>
-                    </span>
-                  </small>
+              <div class="price__container">
+                <div class="price__regular">
+                  <span class="price-item price-item--regular"> LE 299.00 EGP </span>
                 </div>
               </div>
             </div>
