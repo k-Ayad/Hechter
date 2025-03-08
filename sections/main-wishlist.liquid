@@ -1,0 +1,155 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'toast.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #bookmark-wrapper:hover .fa-trash-can {
+    transform: scale(1.45);
+    transition: all 0.14s ease-in-out;
+    color: red;
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding" style="padding-inline:6rem;">
+  <h1 class="main-page-title page-title h0">
+    {{ page.title | escape }}
+  </h1>
+  <div id="wishlist-container" class="row"></div>
+  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {{ page.content }}
+  </div>
+</div>
+<script>
+    let productList;
+    const wishList = document.getElementById('wishlist-container');
+    renderProducts();
+
+    function renderProducts(){
+        productList = JSON.parse(localStorage.getItem('wishList')) || [];
+        wishList.innerHTML = '';
+        if(productList.length){
+            productList.forEach(product => {
+                wishList.innerHTML += `<div class="card-wrapper col-12 col-md-3 product-card-wrapper underline-links-hover">
+                  <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
+                    <i
+                      onclick="removeFromWishList(${product.id})"
+                      class="fas fa-trash-can fs-3"
+                      style="cursor:pointer"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <div class="card border-0 card--standard card--media" style="--ratio-percent: 133.33333333333334%;">
+                    <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 133.33333333333334%;">
+                      <div class="card__media">
+                        <div class="media media--transparent media--hover-effect">
+                          <img
+                            src="${product.imageUrl}"
+                            sizes="(min-width: 1400px) 317px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                            alt="${product.title}"
+                            class="motion-reduce"
+                            width="1500"
+                            height="2000"
+                          >
+                        </div>
+                      </div>
+                      <div class="card__content">
+                        <div class="card__information">
+                          <h3 class="card__heading">
+                            <a
+                              href="${product.url}"
+                              id="StandardCardNoMediaLink-template--23991343350064__product-grid-9729165820208"
+                              class="full-unstyled-link"
+                              aria-labelledby="StandardCardNoMediaLink-template--23991343350064__product-grid-9729165820208 NoMediaStandardBadge-template--23991343350064__product-grid-9729165820208"
+                            >
+                              ${product.title}
+                            </a>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading h5" id="title-template--23991343350064__product-grid-9729165820208">
+                          <a
+                            href="${product.url}"
+                            id="CardLink-template--23991343350064__product-grid-9729165820208"
+                            class="full-unstyled-link"
+                            aria-labelledby="CardLink-template--23991343350064__product-grid-9729165820208 Badge-template--23991343350064__product-grid-9729165820208"
+                          >
+                            ${product.title}
+                          </a>
+                        </h3>
+                        <div class="card-information">
+                          <span class="caption-large light"></span>
+                          <div class="price  price--sold-out price--on-sale">
+                            <div class="price__container">
+                              <div class="price__sale">
+                                <span class="price-item price-item--sale price-item--last"> ${product.price} </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>`;
+            });
+        }else{
+            wishList.innerHTML = '<div class="fs-4" style="display:block">The Wishlist is empty.</div>';
+        }
+    };
+
+    function removeFromWishList(id) {
+        const existingProduct = productList?.find(el => el.id == id);
+        if(existingProduct){
+            const updatedProductList = productList.filter(el => el.id != id);
+            localStorage.setItem('wishList',JSON.stringify(updatedProductList));
+            showToast('Product removed from your wishlist!');
+            renderProducts();
+        }
+    }
+</script>
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
