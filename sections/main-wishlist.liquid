@@ -30,6 +30,21 @@
   </div>
 </div>
 <script>
+    function showToast(message) {
+        var toast = document.createElement('div');
+        toast.classList.add('toast');
+        toast.innerText = message;
+        document.body.appendChild(toast);
+    
+        setTimeout(function() {
+          toast.classList.add('show');
+        }, 100);
+    
+        setTimeout(function() {
+          toast.classList.remove('show');
+          document.body.removeChild(toast);
+        }, 4000);
+      }
     let productList;
     const wishList = document.getElementById('wishlist-container');
     renderProducts();
@@ -114,6 +129,7 @@
         if(existingProduct){
             const updatedProductList = productList.filter(el => el.id != id);
             localStorage.setItem('wishList',JSON.stringify(updatedProductList));
+            showToast('Removed successfully!');
             renderProducts();
         }
     }
