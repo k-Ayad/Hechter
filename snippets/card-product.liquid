@@ -687,6 +687,8 @@
     productList.push(product);
     localStorage.setItem('wishList',JSON.stringify(productList));
     showToast('Product added to your wishlist!');
+    }else{
+    showToast('Product is already in your wishlist!');
     }
   }
 </script>
