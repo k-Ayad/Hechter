@@ -30,11 +30,12 @@
   </div>
 </div>
 <script>
-    const productList = JSON.parse(localStorage.getItem('wishList')) || [];
+    let productList;
     const wishList = document.getElementById('wishlist-container');
     renderProducts();
 
     function renderProducts(){
+        productList = JSON.parse(localStorage.getItem('wishList')) || [];
         wishList.innerHTML = '';
         productList.forEach(product => {
             wishList.innerHTML += `<div class="card-wrapper col-12 col-md-3 product-card-wrapper underline-links-hover">
@@ -105,7 +106,6 @@
     };
 
     function removeFromWishList(id) {
-        const productList = JSON.parse(localStorage.getItem('wishList')) || [];
         const existingProduct = productList?.find(el => el.id == id);
         if(existingProduct){
             const updatedProductList = productList.filter(el => el.id != id);
