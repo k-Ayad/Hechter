@@ -32,6 +32,7 @@
 <script>
     const productList = JSON.parse(localStorage.getItem('wishList')) || [];
     const wishList = document.getElementById('wishlist-container');
+    renderProducts();
 
     function renderProducts(){
         wishList.innerHTML = '';
