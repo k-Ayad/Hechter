@@ -679,15 +679,12 @@
   </div>
 {%- endif -%}
 <script>
-  function addToWishList(title, imageUrl, price, url) {
-    console.log(title);
-    console.log(imageUrl);
-    console.log(price);
-    console.log(url);
+  function addToWishList(id, title, imageUrl, price, url) {
+    const product = {id, title, imageUrl, price, url};
     const productList = JSON.parse(localStorage.getItem('wishList')) || [];
-    const existingProduct = productList?.find(el => el == product);
+    const existingProduct = productList?.find(el => el.id == product.id);
     if(existingProduct){
-    const updatedProductList = productList.filter(el => el != product);
+    const updatedProductList = productList.filter(el => el.id != product.id);
     localStorage.setItem('wishList',JSON.stringify(updatedProductList));
     }else{
     productList.push(product);
