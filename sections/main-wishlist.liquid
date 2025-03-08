@@ -50,10 +50,10 @@
   </div>
 </div>
 <script>
-    function showToast(message) {
+    function showToast(message,success) {
         var toast = document.createElement('div');
         toast.classList.add('toast');
-        toast.innerText = message;
+        toast.innerHTML = success? `<i class="fas text-success fa-circle-check"></i> ${message}`;
         document.body.appendChild(toast);
     
         setTimeout(function() {
