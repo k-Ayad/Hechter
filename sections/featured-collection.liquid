@@ -25,7 +25,7 @@
 {%- endif -%}
 
 {%- style -%}
-  .slider-buttons{
+  #collection-{{ section.id }} .slider-buttons{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -35,7 +35,7 @@
     pointer-events: none;
   }
 
-  .slider-button {
+  #collection-{{ section.id }} .slider-button {
     transform: scale(3);
     pointer-events: auto;
   }
@@ -166,10 +166,10 @@
         {%- endfor -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons">
+        <div id="featured-collection-slider-buttons" class="slider-buttons">
           <button
             type="button"
-            class="slider-button slider-button--prev"
+            class="slider-button slider-button--prev "
             name="previous"
             aria-label="{{ 'general.slider.previous_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
