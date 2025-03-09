@@ -92,7 +92,7 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div id="bookmark-wrapper" style="position:absolute; top: 0; left: 3px;inset: 17px auto auto 17px;display: block;z-index:2;">
+    <div id="bookmark-wrapper" style="position:absolute; top: 0; right: 3px;inset: 17px 17px auto auto;display: block;z-index:2;">
       <i onclick="addToWishList('{{ card_product.id }}','{{ card_product.title }}', '{{ card_product.featured_image | img_url: 'large' }}', '{{ card_product.price | money | remove_first: '' }}', '{{ card_product.url }}')" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
     </div>
     <div
