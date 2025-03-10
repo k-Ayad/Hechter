@@ -8,4 +8,6 @@ function updateWishlistCounter(){
     }
 };
 
-updateWishlistCounter();
+document.addEventListener('DOMContentLoaded', function () {
+    updateWishlistCounter();
+});
