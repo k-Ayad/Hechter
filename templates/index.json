@@ -17,7 +17,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Banner-3.jpg",
             "mobile_image": "shopify://shop_images/Banner-3-copy.webp",
-            "image_url": ""
+            "image_url": "shopify://collections/pants"
           }
         },
         "image_dUjYHP": {
@@ -25,7 +25,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Banner-1-copy.webp",
             "mobile_image": "shopify://shop_images/Banner-1-copy.webp",
-            "image_url": ""
+            "image_url": "shopify://collections/jackets-coats"
           }
         },
         "image_x8DXMh": {
@@ -33,7 +33,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Banner-2.jpg",
             "mobile_image": "shopify://shop_images/Banner-2.jpg",
-            "image_url": ""
+            "image_url": "shopify://collections/jackets-vests"
           }
         },
         "image_6FpKHP": {
@@ -129,7 +129,7 @@
         "show_description": false,
         "show_slider_arrows": true,
         "description_style": "body",
-        "collection": "all",
+        "collection": "new-in",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
@@ -152,7 +152,7 @@
     "featured_collection_i4m4dV": {
       "type": "featured-collection",
       "settings": {
-        "title": "New arrivals",
+        "title": "Best Sellers",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -180,6 +180,7 @@
     },
     "featured_collection_T4pQGP": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "New arrivals",
         "heading_size": "h1",
