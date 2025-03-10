@@ -24,7 +24,7 @@
           "type": "image",
           "settings": {
             "desktop_image": "shopify://shop_images/Banner-1-copy.webp",
-            "mobile_image": "shopify://shop_images/Banner-1-copy.webp",
+            "mobile_image": "shopify://shop_images/DH-Mobile-Banner-1.jpg",
             "image_url": "shopify://collections/jackets-coats"
           }
         },
