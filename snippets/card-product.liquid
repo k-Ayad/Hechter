@@ -23,7 +23,7 @@
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-
+  {{ 'toast.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
@@ -71,6 +71,12 @@
         visibility: visible;
         z-index: 4;
     }
+
+    #bookmark-wrapper:hover .fa-bookmark {
+        transform: scale(1.45);
+        transition: all 0.14s ease-in-out;
+        color: white;
+    }
   {% endstyle %}
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
@@ -86,6 +92,9 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div id="bookmark-wrapper" style="position:absolute; top: 0; right: 3px;inset: 17px 17px auto auto;display: block;z-index:2;">
+      <i onclick="addToWishList('{{ card_product.id }}','{{ card_product.title }}', '{{ card_product.featured_image | img_url: 'large' }}', '{{ card_product.price | money | remove_first: '' }}', '{{ card_product.url }}')" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
+    </div>
     <div
       class="
         card border-0 card--{{ settings.card_style }}
@@ -669,3 +678,17 @@
     </div>
   </div>
 {%- endif -%}
+<script>
+  function addToWishList(id, title, imageUrl, price, url) {
+    const product = {id, title, imageUrl, price, url};
+    const productList = JSON.parse(localStorage.getItem('wishList')) || [];
+    const existingProduct = productList?.find(el => el.id == product.id);
+    if(!existingProduct){
+    productList.push(product);
+    localStorage.setItem('wishList',JSON.stringify(productList));
+    showToast('Product added to your wishlist!');
+    }else{
+    showToast('Product already in your wishlist!');
+    }
+  }
+</script>

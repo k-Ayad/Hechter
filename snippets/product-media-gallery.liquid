@@ -42,6 +42,15 @@
   endif
 -%}
 
+<style>
+  #bookmark-wrapper:hover .fa-bookmark {
+    transform: scale(1.45);
+    transition: all 0.14s ease-in-out;
+    color: white;
+  }
+</style>
+{{ 'toast.css' | asset_url | stylesheet_tag }}
+
 <media-gallery
   id="MediaGallery-{{ section.id }}"
   role="region"
@@ -53,6 +62,9 @@
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
+    <div id="bookmark-wrapper" style="position:absolute; top: 0; right: 3px;inset: 17px 17px auto auto;display: block;z-index:2;">
+      <i onclick="addToWishList('{{ product.id }}','{{ product.title }}', '{{ product.featured_image | img_url: 'large' }}', '{{ product.price | money | remove_first: '' }}', '{{ product.url }}')" class="fas fa-bookmark fs-1" style="cursor:pointer" aria-hidden="true"></i>
+    </div>
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
@@ -330,3 +342,17 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+<script>
+  function addToWishList(id, title, imageUrl, price, url) {
+    const product = {id, title, imageUrl, price, url};
+    const productList = JSON.parse(localStorage.getItem('wishList')) || [];
+    const existingProduct = productList?.find(el => el.id == product.id);
+    if(!existingProduct){
+    productList.push(product);
+    localStorage.setItem('wishList',JSON.stringify(productList));
+    showToast('Product added to your wishlist!');
+    }else{
+    showToast('Product already in your wishlist!');
+    }
+  }
+</script>
