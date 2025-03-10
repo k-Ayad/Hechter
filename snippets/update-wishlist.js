@@ -7,6 +7,4 @@ function updateWishlistCounter(){
     }
 };
 
-document.addEventListener('DOMContentLoaded', function () {
     updateWishlistCounter();
-});
