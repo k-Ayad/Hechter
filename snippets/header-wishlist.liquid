@@ -30,13 +30,4 @@
     </span>
   </span>
 </summary>
-<script>
-    // Fetch the value from localStorage
-    const wishlistCount = JSON.parse(localStorage.getItem('wishList'))?.length;
-    // If the item is present in localStorage, update the counter, otherwise, set it to 0
-    if (wishlistCount) {
-        document.querySelector('.alg-wc-wl-counter').textContent = wishlistCount;
-    } else {
-        document.querySelector('.alg-wc-wl-counter').textContent = 0;
-    }
-</script>
+<script src="{{ 'update-wishlist.js' | asset_url }}" defer="defer"></script>
