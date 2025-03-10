@@ -158,7 +158,7 @@
         "show_description": false,
         "show_slider_arrows": true,
         "description_style": "body",
-        "collection": "all",
+        "collection": "best-selling",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
