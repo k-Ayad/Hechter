@@ -6,5 +6,3 @@ function updateWishlistCounter(){
         document.querySelector('.alg-wc-wl-counter').textContent = 0;
     }
 };
-
-updateWishlistCounter();
