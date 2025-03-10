@@ -76,7 +76,9 @@
               card_collection: block.settings.collection,
               media_aspect_ratio: section.settings.image_ratio,
               columns: columns,
-              placeholder_image: placeholder_image
+              placeholder_image: placeholder_image,
+              block_image: block.settings.collection_image,
+              block_title: block.settings.collection_title
             %}
           </li>
         {%- endfor -%}
@@ -199,12 +201,6 @@
       "info": "t:sections.collection-list.settings.image_ratio.info"
     },
     {
-      "type": "checkbox",
-      "id": "show_collection_title",
-      "label": "Show Collection Title",
-      "default": true
-    },
-    {
       "type": "range",
       "id": "columns_desktop",
       "min": 1,
@@ -286,6 +282,16 @@
           "type": "collection",
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection Image"
+        },
+        {
+          "type": "text",
+          "id": "collection_title",
+          "label": "Collection Title"
         }
       ]
     }
