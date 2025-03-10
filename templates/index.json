@@ -49,6 +49,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "frontpage",
+            "collection_image": "shopify://shop_images/202041304487.jpg",
             "collection_title": ""
           }
         },
@@ -85,7 +86,7 @@
       ],
       "settings": {
         "title": "",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 2,
         "color_scheme": "",
@@ -103,7 +104,7 @@
       ],
       "settings": {
         "title": "New arrivals",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "show_slider_arrows": true,
@@ -132,7 +133,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "New arrivals",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "show_slider_arrows": true,
@@ -161,7 +162,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "New arrivals",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "show_slider_arrows": true,
