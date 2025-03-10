@@ -128,7 +128,7 @@
         "padding_bottom": 20
       }
     },
-    "featured_collection_wKqDEQ": {
+    "featured_collection_i4m4dV": {
       "type": "featured-collection",
       "settings": {
         "title": "New arrivals",
@@ -145,7 +145,7 @@
         "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -157,7 +157,7 @@
         "padding_bottom": 20
       }
     },
-    "featured_collection_rGiEeP": {
+    "featured_collection_T4pQGP": {
       "type": "featured-collection",
       "settings": {
         "title": "New arrivals",
@@ -174,7 +174,7 @@
         "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -243,8 +243,8 @@
     "bootstrap_slider_gdMmBL",
     "collection_list_bBRXBQ",
     "featured_collection",
-    "featured_collection_wKqDEQ",
-    "featured_collection_rGiEeP",
+    "featured_collection_i4m4dV",
+    "featured_collection_T4pQGP",
     "rich_text_qxxPN4"
   ]
 }
