@@ -342,7 +342,6 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
-<script src="{{ 'update-wishlist.js' | asset_url }}" defer="defer"></script>
 <script>
   function addToWishList(id, title, imageUrl, price, url) {
     const product = {id, title, imageUrl, price, url};
@@ -351,7 +350,6 @@
     if(!existingProduct){
     productList.push(product);
     localStorage.setItem('wishList',JSON.stringify(productList));
-    updateWishlistCounter();
     showToast('Product added to your wishlist!');
     }else{
     showToast('Product already in your wishlist!');
