@@ -49,6 +49,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "frontpage",
+            "collection_image": "shopify://shop_images/202041304487.jpg",
             "collection_title": ""
           }
         },
