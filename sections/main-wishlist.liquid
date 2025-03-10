@@ -30,6 +30,7 @@
     {{ page.content }}
   </div>
 </div>
+<script src="{{ 'update-wishlist.js' | asset_url }}" defer="defer"></script>
 <script>
     let productList;
     const wishList = document.getElementById('wishlist-container');
@@ -117,6 +118,8 @@
             localStorage.setItem('wishList',JSON.stringify(updatedProductList));
             showToast('Product removed from your wishlist!');
             renderProducts();
+            updateWishlistCounter();
+
         }
     }
 </script>
