@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "bootstrap_slider_gdMmBL": {
@@ -15,23 +6,32 @@
         "image_UDzUmk": {
           "type": "image",
           "settings": {
-            "desktop_image": "shopify://shop_images/Banner-3-copy.webp",
-            "mobile_image": "shopify://shop_images/Banner-3-copy.webp",
-            "image_url": ""
+            "desktop_image": "shopify:\/\/shop_images\/Banner-3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DH-Mobile-Banner-3.jpg",
+            "image_url": "shopify:\/\/collections\/pants"
           }
         },
         "image_dUjYHP": {
           "type": "image",
           "settings": {
-            "desktop_image": "shopify://shop_images/Banner-1-copy.webp",
-            "mobile_image": "shopify://shop_images/Banner-1-copy.webp",
-            "image_url": ""
+            "desktop_image": "shopify:\/\/shop_images\/Banner-1-copy.webp",
+            "mobile_image": "shopify:\/\/shop_images\/DH-Mobile-Banner-1.jpg",
+            "image_url": "shopify:\/\/collections\/jackets-coats"
+          }
+        },
+        "image_x8DXMh": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/Banner-2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DH-Mobile-Banner-2.jpg",
+            "image_url": "shopify:\/\/collections\/jackets-vests"
           }
         }
       },
       "block_order": [
         "image_UDzUmk",
-        "image_dUjYHP"
+        "image_dUjYHP",
+        "image_x8DXMh"
       ],
       "settings": {
         "autoplay_time": 4000,
@@ -48,29 +48,32 @@
         "featured_collection_NmzVte": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage",
-            "collection_image": "shopify://shop_images/202041304487.jpg",
+            "collection": "shoes",
+            "collection_image": "shopify:\/\/shop_images\/Sq-banner1_1.jpg",
             "collection_title": ""
           }
         },
         "featured_collection_rTUyBE": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "knitwear-sweat",
+            "collection_image": "shopify:\/\/shop_images\/Sq.banner2_1.jpg",
             "collection_title": ""
           }
         },
         "featured_collection_wWpwjt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "jackets-coats",
+            "collection_image": "shopify:\/\/shop_images\/Sq._Banner_3_copy_1.webp",
             "collection_title": ""
           }
         },
         "featured_collection_wwGF7U": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "jackets-vests",
+            "collection_image": "shopify:\/\/shop_images\/Sq._Banner_4_copy_1.webp",
             "collection_title": ""
           }
         }
@@ -86,7 +89,7 @@
       ],
       "settings": {
         "title": "",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 2,
         "color_scheme": "",
@@ -104,12 +107,12 @@
       ],
       "settings": {
         "title": "New arrivals",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "show_slider_arrows": true,
         "description_style": "body",
-        "collection": "all",
+        "collection": "new-in",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
@@ -132,13 +135,13 @@
     "featured_collection_i4m4dV": {
       "type": "featured-collection",
       "settings": {
-        "title": "New arrivals",
-        "heading_size": "h2",
+        "title": "Best Sellers",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "show_slider_arrows": true,
         "description_style": "body",
-        "collection": "all",
+        "collection": "best-selling",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
@@ -160,9 +163,10 @@
     },
     "featured_collection_T4pQGP": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "New arrivals",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "show_slider_arrows": true,
@@ -193,7 +197,7 @@
         "custom_liquid_cXKUbK": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid_code": "<p style=\"color:white\">\n<svg fill =\"#fff\" width=40px   xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d=\"M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z\"/></svg>\n</p>"
+            "custom_liquid_code": "<p style=\"color:white\">\n<svg fill =\"#fff\" width=40px   xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 512 512\"><!--!Font Awesome Free 6.7.2 by @fontawesome - https:\/\/fontawesome.com License - https:\/\/fontawesome.com\/license\/free Copyright 2025 Fonticons, Inc.--><path d=\"M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z\"\/><\/svg>\n<\/p>"
           }
         },
         "heading_9bADDX": {
@@ -206,14 +210,14 @@
         "text_mFKdA6": {
           "type": "text",
           "settings": {
-            "text": "<h4>register for our newsletter and receive a 10% voucher</h4>"
+            "text": "<h4>register for our newsletter and receive a 10% voucher<\/h4>"
           }
         },
         "button_KGJj8F": {
           "type": "button",
           "settings": {
             "button_label": "Discover now",
-            "button_link": "shopify://pages/contact",
+            "button_link": "shopify:\/\/pages\/contact",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
